@@ -333,6 +333,8 @@ main {
     white-space: wrap;
     list-style-position: inside;
     user-select: text;
+    white-space: wrap;
+    line-break: anywhere;
 }
 
 .del-and-imp-btns {
