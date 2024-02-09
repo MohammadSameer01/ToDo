@@ -299,8 +299,8 @@ main {
     margin-top: var(--32px);
     height: 60vh;
     overflow-y: auto;
-    display: flex;
-    flex-direction: column;
+    /* display: flex; */
+    /* flex-direction: column; */
     gap: var(--16px);
     padding: var(--16px);
 }
@@ -314,12 +314,14 @@ main {
 }
 
 .items-inthe-list ol>div {
+    flex: 1 0 2.5em;
     display: flex;
     align-items: start;
     white-space: nowrap;
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
     border-radius: var(--8px);
     overflow-x: hidden;
+    margin: var(--12px);
 }
 
 .items-inthe-list li {
