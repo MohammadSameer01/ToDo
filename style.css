@@ -1,0 +1,507 @@
+:root {
+
+    --black: black;
+    --black1: #111;
+    --black2: #222;
+    --black3: #333;
+
+    --border1: #00000040;
+
+    --white: white;
+    --white1: #F5F5F5;
+    --white2: #FFFFF0;
+
+    --ff1: 'Poppins', sans-serif;
+    --ff2: 'Roboto', sans-serif;
+    --ff3: 'Noto Sans', sans-serif;
+    --ff4: 'Ubuntu', sans-serif;
+    --ff5: 'Protest Strike', sans-serif;
+    --ff6: 'Protest Riot', sans-serif;
+
+    --4px: 4px;
+    --8px: 8px;
+    --12px: 12px;
+    --16px: 16px;
+    --20px: 20px;
+    --24px: 24px;
+    --28px: 28px;
+    --32px: 32px;
+    --36px: 36px;
+    --40px: 40px;
+    --44px: 44px;
+    --48px: 48px;
+    --52px: 52px;
+    --56px: 56px;
+    --60px: 60px;
+
+    --fns16: 16px;
+    --fns18: 18px;
+
+    --duration1: 0.3s;
+    --duration2: 0.4s;
+    --duration3: 0.5s;
+
+    --blue1: #007bff;
+    --blue2: #0056b3;
+
+    --green: #00563b;
+
+    --rough1: rgba(255, 0, 0, 0.2);
+    --rough2: rgba(0, 0, 139, 0.2);
+
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--ff1);
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    color: var(--black);
+    transition: background 0.3s ease;
+}
+
+body {
+    height: auto;
+    width: 100vw;
+    background: var(--white);
+}
+
+/* header styling */
+
+header {
+    text-align: center;
+    padding: var(--16px);
+}
+
+header h1 {
+    font-family: var(--ff6);
+}
+
+.themechanger {
+    width: 100px;
+    height: 70px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.themechanger svg {
+    height: 1.7em;
+    transform: rotate(-12deg);
+    fill: var(--black);
+}
+
+/* main styling */
+
+main {
+    background: unset;
+}
+
+
+
+/* section one styling */
+
+.container-lists {
+    display: flex;
+    height: 60px;
+    align-items: center;
+    gap: var(--28px);
+    padding: var(--4px);
+    margin: auto;
+    margin-top: var(--8px);
+    border-bottom: 1px solid var(--border1);
+    padding-bottom: 0;
+    overflow: auto;
+    padding-left: var(--20px);
+    position: sticky;
+    top: 0;
+    background: var(--white);
+}
+
+.container-lists::-webkit-scrollbar {
+    display: none;
+}
+
+.container-lists div {
+    flex-shrink: 0;
+    padding: var(--4px);
+    min-width: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    border: var(--4px) solid transparent;
+    cursor: pointer;
+    transition: all var(--duration1) ease;
+    font-size: var(--fns16);
+}
+
+.container-lists div:first-child {
+    border-bottom: var(--4px) solid red;
+}
+
+.container-lists div:hover {
+    border-bottom: var(--4px) solid red;
+}
+
+
+
+.create-new-list {
+    height: 50px;
+    width: 50px;
+    border: 2px solid var(--black);
+    border-radius: 50%;
+    position: fixed;
+    right: var(--60px);
+    bottom: var(--52px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--white);
+}
+
+.create-btn {
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.create-btn:hover svg {
+    fill: var(--black);
+}
+
+.create-btn svg {
+    border-radius: 50%;
+    width: 80%;
+    height: 80%;
+    fill: var(--black3);
+    fill: var(--black);
+}
+
+.create-form-inputs {
+    position: relative;
+    left: -150px;
+    top: -100px;
+    font-size: var(--fns16);
+    display: flex;
+    flex-direction: column;
+    gap: var(--12px);
+    display: none;
+    transition: all var(--duration1) ease;
+    background: var(--white);
+    padding: var(--20px);
+    border-radius: var(--12px);
+    transform: translate(500px, 0);
+    transition: all 1s ease;
+    box-shadow: 0 0 25px -10px black;
+}
+
+#nameinput {
+    all: unset;
+    font-size: var(--fns16);
+    padding: var(--8px);
+    width: 300px;
+    border-radius: var(--4px);
+    background: var(--white);
+    border: 1px solid var(--border1);
+}
+
+#add-btn {
+    all: unset;
+    background: var(--blue1);
+    color: white;
+    font-size: var(--fns16);
+    padding: var(--8px);
+    margin: auto;
+    width: 100px;
+    border-radius: var(--12px);
+    cursor: pointer;
+    text-align: center;
+}
+
+#hideforminputs {
+    height: 25px;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+#hideforminputs svg {
+    height: 90%;
+    width: 30px;
+    fill: var(--black);
+}
+
+@media screen and (max-width:600px) {
+    header {
+        margin: 0;
+        padding-bottom: 0;
+    }
+
+    .container-lists {
+        height: 50px;
+    }
+
+    .container-lists div {
+        min-width: 120px;
+    }
+
+    .create-form-inputs {
+        left: -80px;
+    }
+
+    #nameinput {
+        width: 250px;
+    }
+
+}
+
+
+
+/* items in the list styling */
+
+.items-inthe-list {
+    padding: var(--16px);
+    width: 60%;
+    margin: auto;
+    margin-top: var(--32px);
+    min-height: 70vh;
+    border-radius: var(--12px);
+    background: var(--white1);
+    box-shadow: 0 0 25px -15px black;
+    background: var(--white);
+}
+
+.add-list-items-inputs {
+    display: flex;
+    gap: var(--12px);
+}
+
+#list-item-id {
+    all: unset;
+    padding: var(--8px);
+    font-size: var(--16px);
+    border-radius: var(--8px);
+    width: 98%;
+    display: flex;
+    margin: auto;
+    border: 1px solid var(--border1);
+}
+
+.items-inthe-list ol {
+    margin-top: var(--32px);
+    height: 60vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--16px);
+    padding: var(--16px);
+}
+
+.items-inthe-list ol::-webkit-scrollbar {
+    width: 2px;
+}
+
+.items-inthe-list ol::-webkit-scrollbar-thumb {
+    background: red;
+}
+
+.items-inthe-list ol>div {
+    display: flex;
+    align-items: start;
+    white-space: nowrap;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
+    border-radius: var(--8px);
+}
+
+.items-inthe-list li {
+    padding: var(--8px);
+    width: 85%;
+    border-radius: var(--4px);
+    font-size: var(--16px);
+    white-space: wrap;
+    list-style-position: inside;
+    user-select: text;
+}
+
+.del-and-imp-btns {
+    width: 15%;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.mrkimp-btn {
+    width: 50%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mrkimp-btn svg {
+    height: 80%;
+    width: 30%;
+    fill: var(--black);
+}
+
+
+.task-over-btn {
+    width: 50%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.task-over-btn svg {
+    height: 80%;
+    width: 30%;
+    fill: var(--black3);
+    fill: var(--green);
+}
+
+#add-list-item-btn {
+    all: unset;
+    padding: var(--8px);
+    color: var(--white);
+    font-size: var(--16px);
+    border-radius: var(--8px);
+    background: var(--blue1);
+    min-width: 100px;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+}
+
+
+@media screen and (max-width:600px) {
+    .items-inthe-list {
+        margin-top: var(--36px);
+        width: 320px;
+        min-height: 200px;
+        height: 500px;
+    }
+
+    .add-list-items-inputs {
+        flex-direction: column;
+    }
+
+    #list-item-id {
+        width: 90%;
+    }
+
+    #add-list-item-btn {
+        width: 100px;
+        margin: auto;
+    }
+
+    .items-inthe-list ol {
+        height: 70%;
+        overflow: auto;
+        overflow-x: hidden;
+        padding: 3px;
+        gap: var(--16px);
+    }
+
+    .items-inthe-list ol>div {
+        display: flex;
+        align-items: start;
+        white-space: nowrap;
+        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
+        border-radius: var(--8px);
+    }
+
+    .list-item {
+        overflow: hidden;
+    }
+
+    .items-inthe-list li {
+        padding: var(--8px);
+        width: 75%;
+        border-radius: var(--4px);
+        font-size: var(--16px);
+        height: auto;
+        font-size: 1em;
+    }
+
+    .del-and-imp-btns {
+        width: 25%;
+        display: flex;
+        justify-content: space-evenly;
+        background: var(--white);
+    }
+
+    .mrkimp-btn {
+        width: 40%;
+        width: 50%;
+    }
+
+    .mrkimp-btn svg {
+        height: 80%;
+        width: 80%;
+        padding: 4px;
+    }
+
+    .task-over-btn {
+        width: 50%;
+    }
+
+    .task-over-btn svg {
+        height: 80%;
+        width: 80%;
+        padding: 4px;
+    }
+
+    .add-list-items-inputs {
+        display: flex;
+        gap: var(--20px);
+    }
+
+
+    .create-new-list {
+        height: 50px;
+        width: 50px;
+        border: 2px solid var(--black3);
+        border-radius: 50%;
+        position: fixed;
+        right: var(--60px);
+        right: 45%;
+        bottom: var(--52px);
+        bottom: 28px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--white);
+    }
+
+    .create-form-inputs {
+        position: relative;
+        left: 10%;
+        top: -110px;
+        font-size: var(--fns16);
+        display: flex;
+        flex-direction: column;
+        gap: var(--12px);
+        display: none;
+        transition: all var(--duration1) ease;
+        background: var(--white);
+        padding: var(--20px);
+        border-radius: var(--12px);
+        transform: translate(500px, 0);
+        transition: all 1s ease;
+        box-shadow: 0 0 25px -10px black;
+    }
+}
