@@ -46,10 +46,6 @@
 
     --green: #00563b;
 
-    --rough1: rgba(255, 0, 0, 0.2);
-    --rough2: rgba(0, 0, 139, 0.2);
-
-
 }
 
 * {
@@ -323,6 +319,7 @@ main {
     white-space: nowrap;
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
     border-radius: var(--8px);
+    overflow-x: hidden;
 }
 
 .items-inthe-list li {
@@ -342,6 +339,7 @@ main {
     display: flex;
     align-items: center;
     overflow: hidden;
+    background: var(--white);
 }
 
 .mrkimp-btn {
@@ -365,12 +363,25 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+}
+
+.task-over-btn:hover {
+    background: green;
 }
 
 .task-over-btn svg {
     height: 80%;
     width: 30%;
     fill: var(--black3);
+    fill: var(--green);
+}
+
+.task-over-btn:hover svg {
+    fill: var(--white);
+}
+
+.task-over-btn:active svg {
     fill: var(--green);
 }
 
@@ -505,5 +516,113 @@ main {
         transform: translate(500px, 0);
         transition: all 1s ease;
         box-shadow: 0 0 25px -10px black;
+    }
+}
+
+
+@media screen and (min-width:2100px) {
+
+    body {
+        /* background: red; */
+        width: 1500px;
+        height: 100vh;
+        margin: auto;
+        padding: 30px;
+    }
+
+    header h1 {
+        font-size: 3.5em;
+        margin-bottom: 30px;
+    }
+
+    .themechanger {
+        height: 50px;
+        width: 50px;
+        top: 30px;
+        right: 30px;
+    }
+
+    .themechanger svg {
+        height: 100%;
+    }
+
+    .create-new-list {
+        height: 60px;
+        width: 60px;
+        /* background: red; */
+    }
+
+    .container-lists div {
+        font-size: 1.8em;
+    }
+
+    .items-inthe-list {
+        margin-top: 100px;
+    }
+
+    #list-item-id {
+        font-size: 1.5em;
+    }
+
+    #add-list-item-btn {
+        font-size: 1.5em;
+    }
+
+    .list-item li {
+        font-size: 1.5em;
+        padding: 1em;
+    }
+
+    .create-form-inputs {
+        position: relative;
+        left: -150px;
+        top: -100px;
+        left: -320px;
+        top: -200px;
+        font-size: var(--fns16);
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        display: none;
+        transition: all var(--duration1) ease;
+        background: var(--white);
+        padding: var(--20px);
+        border-radius: var(--12px);
+        transform: translate(500px, 0);
+        transition: all 1s ease;
+        box-shadow: 0 0 25px -10px black;
+    }
+
+    #nameinput {
+        width: 500px;
+        font-size: 1.5em;
+    }
+
+    #add-btn {
+        font-size: 1.5em;
+    }
+
+    #hideforminputs {
+        height: 2em;
+    }
+
+    .del-and-imp-btns {
+        height: 70px;
+    }
+
+    .mrkimp-btn {
+        height: 100%;
+    }
+
+    .mrkimp-btn svg {
+        width: 60%;
+    }
+
+    .task-over-btn {
+        height: 100%;
+    }
+
+    .task-over-btn svg {
+        width: 60%;
     }
 }
