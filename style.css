@@ -318,7 +318,7 @@ main {
     display: flex;
     align-items: start;
     white-space: nowrap;
-    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 1px 23px -8px rgba(0, 0, 0, 0.35);
     border-radius: var(--8px);
     overflow-x: hidden;
     margin: var(--12px);
@@ -366,6 +366,7 @@ main {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    border-radius: 8px;
 }
 
 .task-over-btn:hover {
@@ -404,9 +405,12 @@ main {
 @media screen and (max-width:600px) {
     .items-inthe-list {
         margin-top: var(--36px);
-        width: 320px;
+        width: 100%;
         min-height: 200px;
         height: 500px;
+        height: 65vh;
+        box-shadow: 0 0 0;
+        padding: var(--8px);
     }
 
     .add-list-items-inputs {
