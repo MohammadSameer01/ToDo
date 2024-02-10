@@ -160,6 +160,7 @@ main {
     justify-content: center;
     align-items: center;
     background: var(--white);
+    z-index: 2;
 }
 
 .create-btn {
@@ -299,8 +300,6 @@ main {
     margin-top: var(--32px);
     height: 60vh;
     overflow-y: auto;
-    /* display: flex; */
-    /* flex-direction: column; */
     gap: var(--16px);
     padding: var(--16px);
 }
@@ -322,6 +321,7 @@ main {
     border-radius: var(--8px);
     overflow-x: hidden;
     margin: var(--12px);
+    flex-wrap: wrap;
 }
 
 .items-inthe-list li {
@@ -401,6 +401,26 @@ main {
     color: white;
 }
 
+.timebox {
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    width: 100%;
+    order: 3;
+    font-size: var(--12px);
+    margin-top:1em;
+}
+
+.datecreated {
+    padding: 8px;
+    margin: 0 12px;
+}
+
+.timecreated {
+    padding: 8px;
+}
 
 @media screen and (max-width:600px) {
     .items-inthe-list {
@@ -522,6 +542,10 @@ main {
         transform: translate(500px, 0);
         transition: all 1s ease;
         box-shadow: 0 0 25px -10px black;
+    }
+
+    .timebox {
+        font-size: 10px;
     }
 }
 
