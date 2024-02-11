@@ -397,6 +397,54 @@ main {
     display: none;
 }
 
+@media screen and (max-height:500px) {
+    header {
+        height: 10vh;
+        display: none;
+    }
+
+    .themechanger {
+        height: 10vh;
+    }
+
+    .items-inthe-list {
+        width: 75%;
+        height: 70vh;
+        box-shadow: 0 0 20px -10px black;
+    }
+
+
+
+    .add-list-items-inputs {
+        height: 20%;
+        gap: 4px;
+    }
+
+    #list-item-id {
+        width: 75%;
+    }
+
+    #add-list-item-btn {
+        width: 18%;
+    }
+
+    .container-lists {
+        height: 20%;
+    }
+
+    .list-items-box {
+        height: 60%;
+    }
+
+    .list-item {
+        box-shadow: 0 0 0 0 !important;
+    }
+
+    .list-items-box ol {
+        margin-top: var(--8px);
+    }
+}
+
 @media screen and (max-width:750px) {
 
     .items-inthe-list {
