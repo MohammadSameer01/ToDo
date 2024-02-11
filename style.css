@@ -1,3 +1,5 @@
+@media screen {}
+
 :root {
 
     --black: black;
@@ -313,6 +315,7 @@ main {
 }
 
 .list-item {
+    flex: 0 0;
     display: flex;
     flex-wrap: wrap;
     border-radius: var(--8px);
@@ -332,15 +335,16 @@ main {
 }
 
 .list-item.clicked {
-    background: url(https://www.onlygfx.com/wp-content/uploads/2018/04/completed-stamp-1-1024x788.png);
-    background-size:70px;
+    background: url(completed\ stamp.png);
+    background-size: 70px;
     background-repeat: no-repeat;
     background-position: center;
+    filter: grayscale(1);
 }
 
 .list-item.clicked li {
-    text-decoration: line-through;
-    filter: blur(1px);
+    text-decoration: line-through 4px;
+    filter: blur(px);
 }
 
 .list-items-box ol li {
@@ -399,7 +403,6 @@ main {
     padding: 0 12px;
     color: gray;
 }
-
 
 
 
@@ -522,6 +525,14 @@ main {
 
     .list-items-box {
         height: 75%;
+    }
+
+    .list-item {
+        box-shadow: 1px 1px 6px -4px var(--black);
+    }
+
+    .list-item:hover {
+        box-shadow: 1px 1px 10px -4px var(--black);
     }
 
     .create-new-list {
