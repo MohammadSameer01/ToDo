@@ -323,11 +323,24 @@ main {
     margin-bottom: var(--12px);
     border: 1px solid var(--border1);
     transition: all var(--duration1) ease;
+    z-index: 10;
 }
 
 .list-item:hover {
     box-shadow: 2px 2px 20px -8px black;
     cursor: pointer;
+}
+
+.list-item.clicked {
+    background: url(https://www.onlygfx.com/wp-content/uploads/2018/04/completed-stamp-1-1024x788.png);
+    background-size:70px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.list-item.clicked li {
+    text-decoration: line-through;
+    filter: blur(1px);
 }
 
 .list-items-box ol li {
