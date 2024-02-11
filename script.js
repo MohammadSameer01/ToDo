@@ -1,17 +1,27 @@
 // Function to toggle display of create form inputs
 function createBtn() {
     document.getElementById('create-form-inputs').style.display = 'flex';
-    document.getElementById('create-form-inputs').style.transform = 'translate(0,0)';
+    document.getElementById('addicon').style.transform = 'rotate(45deg)';
+    // document.getElementById('create-form-inputs').style.transform = 'translate(-300px,-250px)';
+    // document.getElementById('create-form-inputs').style.visibility = 'visible';
 }
 
 // Function to close create form
 function closeForm() {
     document.getElementById('create-form-inputs').style.display = 'none';
+    document.getElementById('items-inthe-list').style.transform = 'translate(0)'
+    document.getElementById('addicon').style.transform = 'rotate(90deg)';
+    // document.getElementById('create-form-inputs').style.transform = 'translate(500px,-250px)';
+    // document.getElementById('create-form-inputs').style.visibility = 'hidden';
 }
 
 // Function to hide form inputs
 function hideforminput() {
     document.getElementById('create-form-inputs').style.display = 'none';
+    document.getElementById('items-inthe-list').style.transform = 'translate(0)'
+    document.getElementById('addicon').style.transform = 'rotate(90deg)';
+    // document.getElementById('create-form-inputs').style.transform = 'translate(500px,-250px)';
+    // document.getElementById('create-form-inputs').style.visibility = 'hidden';
 }
 
 // Function to save lists to local storage
@@ -106,9 +116,7 @@ function createListitems(listName) {
     // Create task overflow button
     var taskOverBtn = document.createElement('div');
     taskOverBtn.className = 'task-over-btn';
-    taskOverBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                                <path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/>
-                            </svg>`;
+    taskOverBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"></path></svg>`;
 
     // Append buttons to their container
     delAndImpBtns.appendChild(mrkimpBtn);
@@ -234,9 +242,7 @@ function createListitems(listName) {
     // Create task overflow button
     var taskOverBtn = document.createElement('div');
     taskOverBtn.className = 'task-over-btn';
-    taskOverBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                                <path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/>
-                            </svg>`;
+    taskOverBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"/></svg>`;
 
     // Append buttons to their container
     delAndImpBtns.appendChild(mrkimpBtn);
@@ -248,9 +254,3 @@ function createListitems(listName) {
     newItemContainer.appendChild(delAndImpBtns);
     containerLists.appendChild(newItemContainer);
 }
-
-
-
-
-
-
