@@ -56,8 +56,6 @@
     user-select: none;
     -webkit-tap-highlight-color: transparent;
     color: var(--black);
-    background: var(--white);
-    color: var(--black);
     fill: var(--black);
     transition: background var(--duration1) ease;
 }
@@ -75,6 +73,7 @@ body {
 
 header {
     height: 70px;
+    background: var(--white);
 }
 
 header h1 {
@@ -102,7 +101,10 @@ header h1 {
     height: 100%;
     padding: var(--16px);
     cursor: pointer;
+    transition: all var(--duration1) ease;
 }
+
+
 
 main {
     height: calc(100vh - 70px);
@@ -111,6 +113,7 @@ main {
     align-items: center;
     width: 100vw;
     overflow-x: hidden;
+    background: var(--white);
 }
 
 .create-new-list {
@@ -122,6 +125,9 @@ main {
     border-radius: 50%;
     cursor: pointer;
     border: 2px solid var(--border1);
+    position: fixed;
+    padding: var(--4px);
+    background: var(--white);
     z-index: 10;
 }
 
@@ -152,6 +158,7 @@ main {
     transition: all var(--duration1) ease;
     box-shadow: 0 0 30px -10px black;
     transform: translate(-360px, -240px);
+    background: var(--white);
 }
 
 #hideforminputs {
@@ -434,6 +441,10 @@ main {
         padding: 0 var(--16px);
     }
 
+    .themechanger {
+        padding: 6px;
+    }
+
     .items-inthe-list {
         width: 100%;
         height: 100%;
@@ -500,6 +511,12 @@ main {
         order: 3;
         width: 40%;
         justify-content: right;
+    }
+
+    .del-and-imp-btns .task-over-btn {
+        padding: 6px;
+        width: 35px;
+        height: 35px;
     }
 
     .timebox {
