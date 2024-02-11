@@ -56,68 +56,218 @@
     user-select: none;
     -webkit-tap-highlight-color: transparent;
     color: var(--black);
-    transition: background 0.3s ease;
+    background: var(--white);
+    color: var(--black);
+    fill: var(--black);
+    transition: background var(--duration1) ease;
+}
+
+a {
+    all: unset;
+    cursor: pointer;
 }
 
 body {
-    height: auto;
     width: 100vw;
     background: var(--white);
+    overflow-x: hidden;
 }
 
-/* header styling */
-
 header {
-    text-align: center;
-    padding: var(--16px);
+    height: 70px;
 }
 
 header h1 {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: var(--ff6);
 }
 
 .themechanger {
-    width: 100px;
     height: 70px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: 0;
-    right: 0;
+    right: var(--12px);
+}
+
+.themechanger svg {
+    height: 100%;
+    padding: var(--16px);
+    cursor: pointer;
+}
+
+main {
+    height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.create-new-list {
+    width: var(--48px);
+    height: var(--48px);
+    position: absolute;
+    right: var(--36px);
+    bottom: var(--24px);
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid var(--border1);
+    z-index: 10;
+}
+
+.create-new-list .create-btn {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.create-btn svg {
+    height: 100%;
+    width: 100%;
+    padding: var(--4px);
+    transition: all var(--duration1) ease;
+}
+
+/* list create styling */
+.create-form-inputs {
+    height: 200px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: var(--16px);
+    display: none;
+    overflow: hidden;
+    transition: all var(--duration1) ease;
+    box-shadow: 0 0 30px -10px black;
+    transform: translate(-360px, -240px);
+}
+
+#hideforminputs {
+    width: 40px;
+    height: 20%;
+    margin-left: 300px;
+    cursor: pointer;
+}
+
+#hideforminputs svg {
+    height: 100%;
+    width: 100%;
+    padding: var(--4px);
+}
+
+.inputfrlistitems {
+    height: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.themechanger svg {
-    height: 1.7em;
-    transform: rotate(-12deg);
-    fill: var(--black);
+#nameinput {
+    all: unset;
+    width: 85%;
+    height: 70%;
+    font-size: var(--16px);
+    border-radius: var(--8px);
+    border: 1px solid var(--border1);
+    padding: 0 var(--8px);
 }
 
-/* main styling */
-
-main {
-    background: unset;
+.addlistitembtn {
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.addlistitembtn button {
+    all: unset;
+    font-size: var(--16px);
+    height: 70%;
+    border-radius: var(--8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--blue1);
+    width: 100px;
+    color: white;
+    cursor: pointer;
+}
 
+.addlistitembtn button:hover {
+    background: var(--blue2);
+}
 
-/* section one styling */
+/* list items styling */
+
+.items-inthe-list {
+    width: 700px;
+    height: 550px;
+    border-radius: var(--16px);
+    padding: var(--12px);
+    box-shadow: 0 0 30px -10px black;
+    transition: all var(--duration1) ease-in-out;
+}
+
+.add-list-items-inputs {
+    min-height: 10%;
+    height: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--8px);
+    justify-content: space-evenly;
+}
+
+#list-item-id {
+    all: unset;
+    border: 1px solid var(--border1);
+    height: 40px;
+    width: 520px;
+    font-size: var(--16px);
+    border-radius: var(--4px);
+    padding: 0 var(--8px);
+}
+
+#add-list-item-btn {
+    all: unset;
+    border: 1px solid transparent;
+    font-size: var(--16px);
+    height: 40px;
+    border-radius: var(--4px);
+    padding: 0 var(--8px);
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--blue1);
+    color: white;
+    cursor: pointer;
+}
+
+#add-list-item-btn:hover {
+    background: var(--blue2);
+}
 
 .container-lists {
+    width: 99.5%;
+    height: 12%;
+    padding: 0 4px;
     display: flex;
-    height: 60px;
     align-items: center;
-    gap: var(--28px);
-    padding: var(--4px);
-    margin: auto;
-    margin-top: var(--8px);
-    border-bottom: 1px solid var(--border1);
-    padding-bottom: 0;
-    overflow: auto;
-    padding-left: var(--20px);
-    position: sticky;
-    top: 0;
-    background: var(--white);
+    gap: var(--16px);
+    overflow-x: auto;
 }
 
 .container-lists::-webkit-scrollbar {
@@ -125,534 +275,243 @@ main {
 }
 
 .container-lists div {
-    flex-shrink: 0;
-    padding: var(--4px);
-    min-width: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    border: var(--4px) solid transparent;
-    cursor: pointer;
-    transition: all var(--duration1) ease;
-    font-size: var(--fns16);
-}
-
-.container-lists div:first-child {
-    border-bottom: var(--4px) solid red;
-}
-
-.container-lists div:hover {
-    border-bottom: var(--4px) solid red;
-}
-
-
-
-.create-new-list {
-    height: 50px;
-    width: 50px;
-    border: 2px solid var(--black);
-    border-radius: 50%;
-    position: fixed;
-    right: var(--60px);
-    bottom: var(--52px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: var(--white);
-    z-index: 2;
-}
-
-.create-btn {
-    width: 90%;
-    height: 90%;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-.create-btn:hover svg {
-    fill: var(--black);
-}
-
-.create-btn svg {
-    border-radius: 50%;
-    width: 80%;
-    height: 80%;
-    fill: var(--black3);
-    fill: var(--black);
-}
-
-.create-form-inputs {
-    position: relative;
-    left: -150px;
-    top: -100px;
-    font-size: var(--fns16);
-    display: flex;
-    flex-direction: column;
-    gap: var(--12px);
-    display: none;
-    transition: all var(--duration1) ease;
-    background: var(--white);
-    padding: var(--20px);
-    border-radius: var(--12px);
-    transform: translate(500px, 0);
-    transition: all 1s ease;
-    box-shadow: 0 0 25px -10px black;
-}
-
-#nameinput {
-    all: unset;
-    font-size: var(--fns16);
-    padding: var(--8px);
-    width: 300px;
-    border-radius: var(--4px);
-    background: var(--white);
-    border: 1px solid var(--border1);
-}
-
-#add-btn {
-    all: unset;
-    background: var(--blue1);
-    color: white;
-    font-size: var(--fns16);
-    padding: var(--8px);
-    margin: auto;
-    width: 100px;
-    border-radius: var(--12px);
-    cursor: pointer;
+    flex: 0 0 15%;
     text-align: center;
-}
-
-#hideforminputs {
-    height: 25px;
-    display: flex;
-    justify-content: right;
-    align-items: center;
-}
-
-#hideforminputs svg {
-    height: 90%;
-    width: 30px;
-    fill: var(--black);
-}
-
-@media screen and (max-width:600px) {
-    header {
-        margin: 0;
-        padding-bottom: 0;
-    }
-
-    .container-lists {
-        height: 50px;
-    }
-
-    .container-lists div {
-        min-width: 120px;
-    }
-
-    .create-form-inputs {
-        left: -80px;
-    }
-
-    #nameinput {
-        width: 250px;
-    }
-
-}
-
-
-
-/* items in the list styling */
-
-.items-inthe-list {
-    padding: var(--16px);
-    width: 60%;
-    margin: auto;
-    margin-top: var(--32px);
-    min-height: 70vh;
-    border-radius: var(--12px);
-    background: var(--white1);
-    box-shadow: 0 0 25px -15px black;
-    background: var(--white);
-}
-
-.add-list-items-inputs {
-    display: flex;
-    gap: var(--12px);
-}
-
-#list-item-id {
-    all: unset;
-    padding: var(--8px);
-    font-size: var(--16px);
     border-radius: var(--8px);
-    width: 98%;
-    display: flex;
-    margin: auto;
     border: 1px solid var(--border1);
+    padding: var(--8px);
+    white-space: nowrap;
 }
 
-.items-inthe-list ol {
-    margin-top: var(--32px);
-    height: 60vh;
+.list-items-box {
+    height: 77%;
+    overflow: hidden;
+}
+
+.list-items-box ol {
+    height: 100%;
+    width: 100%;
+    margin-top: var(--20px);
     overflow-y: auto;
-    gap: var(--16px);
-    padding: var(--16px);
+    scroll-behavior: smooth;
+    padding-bottom: var(--16px);
 }
 
-.items-inthe-list ol::-webkit-scrollbar {
+.list-items-box ol::-webkit-scrollbar {
     width: 2px;
 }
 
-.items-inthe-list ol::-webkit-scrollbar-thumb {
+.list-items-box ol::-webkit-scrollbar-thumb {
     background: red;
 }
 
-.items-inthe-list ol>div {
-    flex: 1 0 2.5em;
+.list-item {
     display: flex;
-    align-items: start;
-    white-space: nowrap;
-    box-shadow: 0 1px 23px -8px rgba(0, 0, 0, 0.35);
-    border-radius: var(--8px);
-    overflow-x: hidden;
-    margin: var(--12px);
     flex-wrap: wrap;
+    border-radius: var(--8px);
+    box-shadow: 0 0 20px -12px black;
+    width: 95%;
+    margin: auto;
+    padding: var(--8px) var(--12px);
+    margin-bottom: var(--12px);
+    border: 1px solid var(--border1);
+    transition: all var(--duration1) ease;
 }
 
-.items-inthe-list li {
-    padding: var(--8px);
-    width: 85%;
-    border-radius: var(--4px);
-    font-size: var(--16px);
-    white-space: wrap;
+.list-item:hover {
+    box-shadow: 2px 2px 20px -8px black;
+    cursor: pointer;
+}
+
+.list-items-box ol li {
+    width: 90%;
+    min-height: 3em;
+    height: auto;
     list-style-position: inside;
     user-select: text;
-    white-space: wrap;
     line-break: anywhere;
+    display: flex;
+    align-items: center;
 }
 
 .del-and-imp-btns {
-    width: 15%;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    background: var(--white);
-}
-
-.mrkimp-btn {
-    width: 50%;
-    height: 40px;
+    width: 10%;
+    height: 3em;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-.mrkimp-btn svg {
-    height: 80%;
-    width: 30%;
-    fill: var(--black);
-}
-
 
 .task-over-btn {
-    width: 50%;
-    height: 40px;
+    height: 2.5em;
+    width: 2.5em;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 50%;
+    background: red;
+    padding: var(--8px);
     cursor: pointer;
-    border-radius: 8px;
-}
-
-.task-over-btn:hover {
-    background: green;
 }
 
 .task-over-btn svg {
-    height: 80%;
-    width: 30%;
-    fill: var(--black3);
-    fill: var(--green);
-}
-
-.task-over-btn:hover svg {
-    fill: var(--white);
-}
-
-.task-over-btn:active svg {
-    fill: var(--green);
-}
-
-#add-list-item-btn {
-    all: unset;
-    padding: var(--8px);
-    color: var(--white);
-    font-size: var(--16px);
-    border-radius: var(--8px);
-    background: var(--blue1);
-    min-width: 100px;
-    text-align: center;
-    cursor: pointer;
-    color: white;
+    height: 90%;
+    width: 90%;
+    background: transparent;
 }
 
 .timebox {
-    height: auto;
-    position: relative;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    width: 100%;
     order: 3;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    margin-top: var(--16px);
     font-size: var(--12px);
-    margin-top:1em;
-}
-
-.datecreated {
-    padding: 8px;
-    margin: 0 12px;
 }
 
 .timecreated {
-    padding: 8px;
+    color: gray;
+    padding: 0 4px;
 }
 
-@media screen and (max-width:600px) {
+.datecreated {
+    padding: 0 12px;
+    color: gray;
+}
+
+
+
+
+
+
+
+.mrkimp-btn {
+    display: none;
+}
+
+@media screen and (max-width:750px) {
+
     .items-inthe-list {
-        margin-top: var(--36px);
-        width: 100%;
-        min-height: 200px;
-        height: 500px;
-        height: 65vh;
-        box-shadow: 0 0 0;
-        padding: var(--8px);
+        width: 450px;
     }
 
     .add-list-items-inputs {
-        flex-direction: column;
+        height: 20%;
     }
 
-    #list-item-id {
-        width: 90%;
+    .container-lists {
+        height: 10%;
     }
 
-    #add-list-item-btn {
-        width: 100px;
-        margin: auto;
+    .list-items-box {
+        height: 69%;
     }
-
-    .items-inthe-list ol {
-        height: 70%;
-        overflow: auto;
-        overflow-x: hidden;
-        padding: 3px;
-        gap: var(--16px);
-    }
-
-    .items-inthe-list ol>div {
-        display: flex;
-        align-items: start;
-        white-space: nowrap;
-        box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
-        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
-        border-radius: var(--8px);
-    }
-
-    .list-item {
-        overflow: hidden;
-    }
-
-    .items-inthe-list li {
-        padding: var(--8px);
-        width: 75%;
-        border-radius: var(--4px);
-        font-size: var(--16px);
-        height: auto;
-        font-size: 1em;
-    }
-
-    .del-and-imp-btns {
-        width: 25%;
-        display: flex;
-        justify-content: space-evenly;
-        background: var(--white);
-    }
-
-    .mrkimp-btn {
-        width: 40%;
-        width: 50%;
-    }
-
-    .mrkimp-btn svg {
-        height: 80%;
-        width: 80%;
-        padding: 4px;
-    }
-
-    .task-over-btn {
-        width: 50%;
-    }
-
-    .task-over-btn svg {
-        height: 80%;
-        width: 80%;
-        padding: 4px;
-    }
-
-    .add-list-items-inputs {
-        display: flex;
-        gap: var(--20px);
-    }
-
 
     .create-new-list {
-        height: 50px;
-        width: 50px;
-        border: 2px solid var(--black3);
-        border-radius: 50%;
-        position: fixed;
-        right: var(--60px);
-        right: 45%;
-        bottom: var(--52px);
-        bottom: 28px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: var(--white);
+        bottom: 2vh;
+        left: 46%;
     }
 
     .create-form-inputs {
-        position: relative;
-        left: 10%;
-        top: -110px;
-        font-size: var(--fns16);
+        height: 200px;
+        width: 350px;
         display: flex;
         flex-direction: column;
-        gap: var(--12px);
+        justify-content: space-evenly;
+        border-radius: var(--16px);
         display: none;
+        overflow: hidden;
         transition: all var(--duration1) ease;
-        background: var(--white);
-        padding: var(--20px);
+        box-shadow: 0 0 30px -10px black;
+        transform: translate(-160px, -260px);
+    }
+}
+
+@media screen and (max-width:500px) {
+    header h1 {
+        justify-content: start;
+        padding: 0 var(--16px);
+    }
+
+    .items-inthe-list {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+
+    .add-list-items-inputs {
+        height: 15%;
+    }
+
+    .container-lists {
+        height: 10%;
+    }
+
+    .list-items-box {
+        height: 75%;
+    }
+
+    .create-new-list {
+        bottom: 2vh;
+        left: 46%;
+    }
+
+    .create-form-inputs {
+        height: 200px;
+        width: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        border-radius: var(--16px);
+        display: none;
+        overflow: hidden;
+        transition: all var(--duration1) ease;
+        box-shadow: 0 0 30px -10px black;
+        transform: translate(-160px, -260px);
+    }
+
+
+    #add-list-item-btn {
+        width: 80px;
         border-radius: var(--12px);
-        transform: translate(500px, 0);
-        transition: all 1s ease;
-        box-shadow: 0 0 25px -10px black;
+    }
+
+    .list-items-box ol {
+        margin-top: var(--8px);
+    }
+
+    .list-items-box ol li {
+        width: 100%;
+        min-height: unset;
+        min-height: 2em;
+        list-style-position: inside;
+        user-select: text;
+        line-break: anywhere;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        margin-bottom: var(--8px);
+    }
+
+    .del-and-imp-btns {
+        width: 15%;
+        height: auto;
+        order: 3;
+        width: 40%;
+        justify-content: right;
     }
 
     .timebox {
+        height: 3em;
+        height: auto;
+        width: 60%;
+        display: flex;
+        gap: 0;
+        align-items: last baseline;
+        justify-content: left;
+        margin-top: 0;
         font-size: 10px;
     }
-}
 
-
-@media screen and (min-width:2100px) {
-
-    body {
-        /* background: red; */
-        width: 1500px;
-        height: 100vh;
-        margin: auto;
-        padding: 30px;
-    }
-
-    header h1 {
-        font-size: 3.5em;
-        margin-bottom: 30px;
-    }
-
-    .themechanger {
-        height: 50px;
-        width: 50px;
-        top: 30px;
-        right: 30px;
-    }
-
-    .themechanger svg {
-        height: 100%;
-    }
-
-    .create-new-list {
-        height: 60px;
-        width: 60px;
-        /* background: red; */
-    }
-
-    .container-lists div {
-        font-size: 1.8em;
-    }
-
-    .items-inthe-list {
-        margin-top: 100px;
-    }
-
-    #list-item-id {
-        font-size: 1.5em;
-    }
-
-    #add-list-item-btn {
-        font-size: 1.5em;
-    }
-
-    .list-item li {
-        font-size: 1.5em;
-        padding: 1em;
-    }
-
-    .create-form-inputs {
-        position: relative;
-        left: -150px;
-        top: -100px;
-        left: -320px;
-        top: -200px;
-        font-size: var(--fns16);
-        display: flex;
-        flex-direction: column;
-        gap: 2em;
-        display: none;
-        transition: all var(--duration1) ease;
-        background: var(--white);
-        padding: var(--20px);
-        border-radius: var(--12px);
-        transform: translate(500px, 0);
-        transition: all 1s ease;
-        box-shadow: 0 0 25px -10px black;
-    }
-
-    #nameinput {
-        width: 500px;
-        font-size: 1.5em;
-    }
-
-    #add-btn {
-        font-size: 1.5em;
-    }
-
-    #hideforminputs {
-        height: 2em;
-    }
-
-    .del-and-imp-btns {
-        height: 70px;
-    }
-
-    .mrkimp-btn {
-        height: 100%;
-    }
-
-    .mrkimp-btn svg {
-        width: 60%;
-    }
-
-    .task-over-btn {
-        height: 100%;
-    }
-
-    .task-over-btn svg {
-        width: 60%;
-    }
 }
