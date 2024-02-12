@@ -466,30 +466,3 @@ function createListitems(listName) {
     // Apply styles based on theme and clicked state
     applyStyles(newItemContainer);
 }
-
-// Function to apply styles based on theme and clicked state
-function applyStyles(item) {
-    let theme = localStorage.getItem('theme');
-    let greenColor = localStorage.getItem('greenColor');
-
-    // Change background color based on the theme
-    item.style.backgroundColor = theme;
-
-    // Check if the item is clicked and update styles accordingly
-    if (item.classList.contains('clicked')) {
-        item.style.backgroundImage = `url(completed\ stamp.png)`; // Change background image
-        item.style.backgroundSize = '70px'; // Set background size
-        item.style.backgroundRepeat = 'no-repeat'; // Set background repeat
-        item.style.backgroundPosition = 'center'; // Set background position
-        item.style.filter = 'grayscale(1)'; // Apply grayscale filter
-
-        let listItem = item.querySelector('li');
-        listItem.style.textDecoration = 'line-through 4px'; // Apply text decoration
-        listItem.style.filter = 'blur(px)'; // Apply blur filter
-    }
-}
-
-// Apply styles to existing list items
-document.querySelectorAll('.list-item').forEach(item => {
-    applyStyles(item);
-});
