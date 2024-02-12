@@ -56,7 +56,6 @@
     user-select: none;
     -webkit-tap-highlight-color: transparent;
     color: var(--black);
-    fill: var(--black);
     transition: background var(--duration1) ease;
 }
 
@@ -100,8 +99,18 @@ header h1 {
 
 .themechanger svg {
     height: 100%;
-    padding: var(--16px);
+    padding: var(--20px);
     cursor: pointer;
+    transition: all var(--duration1) ease;
+    fill: var(--black);
+}
+
+.themechanger:hover svg,
+.save-btn:hover svg,
+.create-btn:hover svg,
+#hideforminputs:hover svg {
+    fill: red;
+    scale: 1.1;
     transition: all var(--duration1) ease;
 }
 
@@ -120,7 +129,9 @@ header h1 {
     flex: 0 0 100%;
     height: 65%;
     width: 100%;
-    padding: var(--16px);
+    padding: var(--20px);
+    fill: var(--black);
+    transition: all var(--duration1) ease;
 }
 
 .save-btn p {
@@ -128,6 +139,7 @@ header h1 {
     text-align: center;
     width: 100%;
     font-size: 13px;
+    transform: translate(0, -10px);
 }
 
 
@@ -168,6 +180,7 @@ main {
     width: 100%;
     padding: var(--4px);
     transition: all var(--duration1) ease;
+    fill: var(--black);
 }
 
 /* list create styling */
@@ -197,6 +210,7 @@ main {
     height: 100%;
     width: 100%;
     padding: var(--4px);
+    fill: var(--black);
 }
 
 .inputfrlistitems {
@@ -368,7 +382,16 @@ main {
 
 .list-item.clicked li {
     text-decoration: line-through 4px;
-    filter: blur(px);
+    white-space: nowrap;
+    overflow: hidden;
+    display: unset;
+    transition: all var(--duration1) ease;
+    text-overflow: ellipsis;
+}
+
+.list-item.clicked .task-over-btn svg {
+    transform: rotate(180deg);
+    fill: white;
 }
 
 .list-items-box ol li {
@@ -400,12 +423,15 @@ main {
     background: red;
     padding: var(--8px);
     cursor: pointer;
+    transition: all var(--duration1) ease;
 }
 
 .task-over-btn svg {
     height: 90%;
     width: 90%;
     background: transparent;
+    fill: var(--black);
+    transition: all var(--duration1) ease;
 }
 
 .timebox {
