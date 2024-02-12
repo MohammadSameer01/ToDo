@@ -1,5 +1,3 @@
-@media screen {}
-
 :root {
 
     --black: black;
@@ -97,6 +95,7 @@ header h1 {
     position: absolute;
     top: 0;
     right: var(--12px);
+    right: 72px;
 }
 
 .themechanger svg {
@@ -106,6 +105,30 @@ header h1 {
     transition: all var(--duration1) ease;
 }
 
+.save-btn {
+    height: 70px;
+    width: 70px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+.save-btn svg {
+    flex: 0 0 100%;
+    height: 65%;
+    width: 100%;
+    padding: var(--16px);
+}
+
+.save-btn p {
+    height: 35%;
+    text-align: center;
+    width: 100%;
+    font-size: 13px;
+}
 
 
 main {
@@ -340,6 +363,7 @@ main {
     background-repeat: no-repeat;
     background-position: center;
     filter: grayscale(1);
+    color: var(--black);
 }
 
 .list-item.clicked li {
@@ -403,7 +427,6 @@ main {
     padding: 0 12px;
     color: gray;
 }
-
 
 
 
@@ -507,6 +530,31 @@ main {
 
     .themechanger {
         padding: 6px;
+        right: 15%;
+    }
+
+    .save-btn {
+        height: 70px;
+        width: 70px;
+        top: 0;
+        right: 0;
+        border: 0;
+        transition: all var(--duration1) ease;
+    }
+
+    .save-btn:active {
+        width: 0;
+    }
+
+    .save-btn svg {
+        height: 100%;
+        width: 100%;
+        padding: var(--16px);
+        padding: 21px;
+    }
+
+    .save-btn p {
+        display: none;
     }
 
     .items-inthe-list {
