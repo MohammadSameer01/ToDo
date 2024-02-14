@@ -419,3 +419,18 @@ var saveBtn = document.getElementById('save-btn-id');
 saveBtn.addEventListener('click', function () {
     location.reload();
 });
+
+
+
+
+let docTitle = document.title;
+window.addEventListener("blur", () => {
+    document.title = "Come back ☹️ ";
+})
+window.addEventListener("focus", () => {
+    document.title = docTitle;
+})
+
+
+
+
