@@ -454,6 +454,61 @@ main {
     color: gray;
 }
 
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.modal-content {
+    background-color: white;
+    width: 20%;
+    margin: 20% auto;
+    padding: 16px 12px;
+    border-radius: 12px;
+    background: var(--white);
+    box-shadow: 0 0 25px -12px var(--black);
+    overflow: hidden;
+}
+
+.modal-content img {
+    height: 120px;
+    width: 100%;
+    object-fit: contain;
+    animation: underconanimation 4s linear infinite;
+}
+
+@keyframes underconanimation {
+    0% {
+        transform: translate(-200px);
+        /* transform: rotate(-2deg); */
+    }
+
+    100% {
+        transform: translate(200px);
+        /* transform: rotate(2deg); */
+    }
+}
+
+.modal-content span {
+    display: flex;
+    justify-content: right;
+}
+
+.modal-content svg {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    padding: 8px;
+    cursor: pointer;
+    fill: var(--black);
+}
 
 
 
@@ -676,4 +731,45 @@ main {
         font-size: 10px;
     }
 
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        backdrop-filter: blur(5px);
+    }
+
+    .modal-content {
+        background-color: white;
+        width: 70%;
+        margin: 80% auto;
+        padding: 16px 12px;
+        border-radius: 5px;
+        background: var(--white);
+        box-shadow: 0 0 25px -12px var(--black);
+    }
+
+    .modal-content img {
+        height: 100px;
+        width: 100%;
+        object-fit: contain;
+    }
+
+    .modal-content span {
+        display: flex;
+        justify-content: right;
+    }
+
+    .modal-content svg {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        padding: 8px;
+        cursor: pointer;
+        fill: var(--black);
+    }
 }
