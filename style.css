@@ -381,17 +381,19 @@ main {
 }
 
 .list-item.clicked li {
-    text-decoration: line-through 4px;
+    text-decoration: line-through 2px;
     white-space: nowrap;
     overflow: hidden;
     display: unset;
     transition: all var(--duration1) ease;
     text-overflow: ellipsis;
+    filter: blur(1px);
 }
 
 .list-item.clicked .task-over-btn svg {
-    transform: rotate(180deg);
+    transform: rotate(360deg);
     fill: white;
+    scale: 1.2;
 }
 
 .list-items-box ol li {
@@ -508,6 +510,11 @@ main {
     padding: 8px;
     cursor: pointer;
     fill: var(--black);
+}
+
+/* CSS */
+.red-placeholder::placeholder {
+    color: red;
 }
 
 
