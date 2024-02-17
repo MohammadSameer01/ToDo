@@ -512,78 +512,18 @@ main {
     fill: var(--black);
 }
 
-/* CSS */
 .red-placeholder::placeholder {
     color: red;
 }
 
-
-.happy-brithday {
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    backdrop-filter: blur(5px);
-    animation: happybirthday 4s ease;
-    visibility: hidden;
-    z-index: 10000;
-    background-image: url(https://scontent.fbpm3-1.fna.fbcdn.net/v/t39.30808-6/311425645_1500345313808114_2019512575714585266_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=9c7eae&_nc_ohc=PGhimZQivaAAX8L5r8_&_nc_ht=scontent.fbpm3-1.fna&oh=00_AfAjBCKELD9RQS93LpSVACe76UFlSFyrcjicWj1SQyxWIQ&oe=65D498D4);
-    background-position: center;
-    background-size: cover;
-    position: fixed;
+.list-item {
+    transition: scale var(--duration1) ease 0.2s;
+    scale: 0.95;
 }
 
-.happy-brithday .div {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    backdrop-filter: blur(10px);
+.show {
+    scale: 1;
 }
-
-.happy-brithday img {
-    height: 250px;
-    width: 250px;
-    margin: 0 auto;
-    border-radius: 50%;
-}
-
-.happy-brithday h1 {
-    text-align: center;
-    padding: 12px;
-}
-
-.red {
-    color: red;
-}
-
-@keyframes happybirthday {
-    0% {
-        visibility: visible;
-    }
-
-    100% {
-        visibility: hidden;
-    }
-}
-
-@media screen and (max-width:500px) {
-    .happy-brithday {
-        font-size: 1.3em;
-        text-align: center;
-    }
-
-    .happy-brithday h1 {
-        padding: 12px;
-    }
-}
-
 
 
 
