@@ -553,7 +553,10 @@ main {
     margin: 0 auto;
     border-radius: 50%;
 }
-
+.happy-brithday h1{
+    text-align: center;
+    padding: 12px;
+}
 .red {
     color: red;
 }
