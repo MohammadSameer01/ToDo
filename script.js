@@ -498,3 +498,18 @@ window.onclick = function (event) {
 
 
 
+document.addEventListener('DOMContentLoaded', () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            console.log(entry);
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            } else {
+                entry.target.classList.remove('show');
+            }
+        });
+    });
+
+    const listItemElements = document.querySelectorAll('.list-item');
+    listItemElements.forEach((el) => observer.observe(el));
+});
