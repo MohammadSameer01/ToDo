@@ -82,6 +82,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Add event listener to the "Add" button for adding new tasks
+    // Store the default placeholder text when the page loads
+    var defaultPlaceholder = document.getElementById('list-item-id').getAttribute('placeholder');
+
     document.getElementById('add-list-item-btn').addEventListener('click', function () {
         // Get the value of the input field
         var listNameInput = document.getElementById('list-item-id');
@@ -91,9 +94,30 @@ document.addEventListener('DOMContentLoaded', function () {
             createListitems(listName); // If a name is entered, create a new list item
             listNameInput.value = ''; // Clear the input field
         } else {
-            alert("Please enter a task name."); // Notify the user to enter a task name
+            listNameInput.placeholder = "Please enter a task name...."; // Change the placeholder text
+            listNameInput.classList.add('red-placeholder'); // Add a class to change the placeholder color
+        }
+
+        // Call the resetPlaceholder function after 1.5 seconds
+        setTimeout(resetPlaceholder, 1000);
+    });
+
+    // Add an input event listener to reset the placeholder when the user starts typing
+    document.getElementById('list-item-id').addEventListener('input', function () {
+        var listNameInput = document.getElementById('list-item-id');
+        if (listNameInput.value.trim()) {
+            listNameInput.placeholder = ""; // Reset the placeholder text
+            listNameInput.classList.remove('red-placeholder'); // Remove the class
         }
     });
+
+    // Function to reset the placeholder to the default text
+    function resetPlaceholder() {
+        var listNameInput = document.getElementById('list-item-id');
+        listNameInput.placeholder = defaultPlaceholder; // Reset the placeholder text
+        listNameInput.classList.remove('red-placeholder'); // Remove the class
+    }
+
 });
 
 // // Function to create a new list item with the given name
